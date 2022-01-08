@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Revised Bard Round Tracker</title>
+   <meta name="viewport" content="width=device-width,initial-scale=1" >
+  <link href='bard2.css' rel='stylesheet'>
+</head>
+<body style="background-color:black;color:white;">
+  <h1>Revised Bard Round Tracker</h1>
+  <section>
+  <form id="level">
+    <h3>Step 1: Set your character level</h3>
+    <select id="characterLevel">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+      <option value="13">13</option>
+      <option value="14">14</option>
+      <option value="15">15</option>
+      <option value="16">16</option>
+      <option value="17">17</option>
+      <option value="18">18</option>
+      <option value="19">19</option>
+      <option value="20">20</option>
+    </select>
+    <button type="button" id="levelSelect" onclick="levelDependentOptions()">Set Level</button>
+    <label for="levelSelect" id="charLev">My character is level:  <strong><span id="levelNumber"></span></strong></label>
+    <button type="button" id="levelReset" onclick="levelReset()">Wait, no they aren't!</button>
+    <p></p>
+    <hr size="4">
+    <p></p>
+  </form>
+  <form id="form0">
+    <h3>Step 2: Begin your bardic performance</h3>
+    <label for="Begin">How fast do you want to start your bardic performance?</label>
+    <p> </p>
+    <div>
+    <select id="startDCValue" name="startDCValue">
+      <option value="0">-----</option>
+      <option value="5">Full-Round Action (DC 5)</option>
+      <option value="10">Standard Action (DC 10)</option>
+      <option value="15">Move Action (DC 15)</option>
+      <option value="20">Swift Action (DC 20)</option>
+      <option value="30" id="freeSpeed" hidden>Free Action (DC 30)</option>
+    </select>
+    <button type="button" id="setStartSpeed" onclick="setStartingDC()">Set Starting DC</button>
+    <button type="button" id="startSpeedReset" onclick="startSpeedReset()">Err, maybe not...</button>  
+    </div>
+    <p></p>
+    <hr size="4" width="95%">
+  </form>
+  </section>
+  <div>
+    <h3 id="round1">Step 3: Select performance actions</h3>
+  </div>
+  <div id="form1">
+    <h4 class="category">Performance Options</h4>
+    <p></p>
+    <input name="performanceOptions" type="checkbox" value="nothingElse" id="nothingElse"/>
+    <label for="nothingElse" id="nothingElseLabel">Nothing Else</label> <br>
+    <input name="performanceOptions" type="checkbox" value="inspireCompetence" id="inspireCompetence" onclick="inspMove()"/>
+    <label for="inspireCompetence" id="inspireLabel">Inspire Competence (Move Action)</label><span id="inspireAlert" class="redSpan"></span> <br>
+    <input name="performanceOptions" type="checkbox" value="maintainInspire" id="maintainInspire" onclick="maintainInspireFree()"/>
+    <label for="maintainInspire" id="maintainLabel"> Maintain Inspire (Free Action)</label><br>
+    <input name="performanceOptions" type="checkbox" value="increaseBAB" id="bab" onclick="babSwift()"/>
+    <label for="bab">Performance Combat: Increase BAB (Swift Action)</label><span id="babAlert" class="redSpan"></span> <br>
+    <input name="performanceOptions" type="checkbox" value="extraAttacks" id="attacks" onclick="attacksFullRound()"/>
+    <label for="attacks">Performance Combat: Extra Attack(s) (as part of Full-Round Action)</label><span class="redSpan" id="attacksAlert"></span> <br>
+    <input name="performanceOptions" type="checkbox" value="increaseAC" id="ac"/>
+    <label for="ac" id="acLabel">Performance Combat: Increase AC while Fighting Defensively 
+    <br>
+    or using Total Defense (Free Action)</label>
+    <br>
+    <input name="performanceOptions" type="checkbox" value="castSpell" id="castSpell" onclick="spellStd()"/>
+    <label for="castSpell" id="spellLabel">Cast Spell (Standard Action)</label><span class="redSpan" id="spellAlert"></span> <br>
+    <p></p>
+    <div id="highLevelOptions"></div>
+  </div>
+  <div id="actionEconomy">
+      <h4 class="category">Action Economy</h4>
+      <p></p>
+        <input name="actionEconomy" type="checkbox" value="swiftAction" id="swiftAction" class="actionEcon"/>
+        <label for="swiftAction" id="swiftLabel">Swift Action</label><span id="swiftAlert redSpan"></span>
+        <input name="Hidden" type="checkbox" id="swiftHidden" class="hiddenBox" hidden> <br>
+        <input name="actionEconomy" type="checkbox" value="moveAction" id="moveAction" class="actionEcon notSwift"/>
+        <label for="moveAction" id="moveLabel">Move Action</label><span id="moveAlert redSpan"></span>
+        <input name="Hidden" type="checkbox" id="moveHidden" class="hiddenBox" hidden> <br>
+        <label>Either/Or:</label><br>
+        <div id="stdOrMove">
+        <input name="actionEconomy" type="checkbox" value="standardAction" class="actionEcon notSwift" id="standardAction"/>
+        <label for="standardAction" id="standardLabel">Standard Action</label><span id="standardAlert redSpan"></span>
+        <input name="Hidden" type="checkbox" id="standardHidden" class="hiddenBox" hidden> <br>
+        <input name="actionEconomy" type="checkbox" value="secondMove" class="actionEcon notSwift" id="secondMove"/>
+        <label for="secondMove" id="secondMoveLabel">Second Move Action</label><span id="secondMoveAlert redSpan"></span>
+        <input name="Hidden" type="checkbox" id="secondMoveHidden" class="hiddenBox" hidden> <br>
+        </div>
+        <input name="actionEconomy" type="checkbox" value="fullRoundAction" class="actionEcon notSwift" id="fullRoundAction"/>
+        <label for="fullRoundAction" id="fullRoundLabel">Full-Round Action</label><span id="fullRoundAlert redSpan"></span>
+        <input name="Hidden" type="checkbox" id="fullRoundHidden" class="hiddenBox" hidden> <br>
+      </div>
+      <p></p>
+      <div id="drawOrSheathe">
+        <h4 class="category">Drawing and Sheathing</h4>
+        <p></p>
+          <label class="noMargin">Draw weapon or instrument: (<span id="drawSpeed"></span>)</label>
+          <span name="span" id="drawAlert" class="redSpan"></span>
+          <button type="button" id="draw" onclick="draw()" class="noMargin">Draw as a Move Action</button><br>
+          <label class="noMargin">Sheathe weapon or instrument: (<span id="sheatheSpeed"></span>)</label>
+          <span name="span" id="sheatheAlert" class="redSpan"></span>
+          <button type="button" id="sheatheSwift" onclick="sheatheSwift()" class="noMargin" hidden>Sheathe as a Swift Action</button><button type="button" id="sheatheMove" onclick="sheatheMove()" class="noMargin">Sheathe as a Move Action</button>
+      </div>
+      <br>
+      <form id="form2">
+      <div>
+        <br>
+        <button type="button" onclick="roundsActions()">Selections Complete</button>
+        <button type="button" onclick="roundReset()">Reset Selections</button>
+        <hr size="4" color="white">
+        <br>
+      </div>
+      </form>
+      <form>
+      <div id="inspireGoHere"></div>
+      <p></p>
+      <div id="combatGoHere"></div>
+      <p></p> 
+      <div id="castGoHere"></div>
+      <p></p>
+      <p></p>
+      </form>
+      <form id="end">
+      <table id="table">
+          <tr>
+            <th scope="col">Round's Actions</th>
+            <th scope="col" style="text-align: center;">Effect on DC</th>
+         </tr>
+        <tbody id="tbody">
+          <tr>
+            <td id="startPrompt">Start Bardic Performance</td>
+            <td id="startValue" style="text-align: center;"></td>
+            <td style="text-align: right;">Or...</td>
+            <td><button type="button" id="manualDCSet" onclick="manualSet()">Manually Set Start DC</button></td>
+         </tr>
+        </tbody>
+      </table>
+      <p></p>
+      <button type="button" id="endRound" onclick="endRoundDC()">Get end-of-round Perform (Sing) DC</button>
+      <button type="button" id="changeRound" onclick="startNextRound()">Move on to next round</button>
+    </form>
+  
+
+<script src="bard2.js">
+ 
+</script>
+
+</body>
+</html>

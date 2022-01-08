@@ -1,0 +1,136 @@
+div #swiftLabel {
+  text-decoration: none;
+}
+div #standardLabel {
+  text-decoration: none;
+}
+div #moveLabel {
+  text-decoration: none;
+}
+div #secondMoveLabel {
+  text-decoration: none
+}
+div #fullRoundLabel {
+  text-decoration: none;
+}
+.hasteEcon {
+  display: none;
+}
+.redSpan {
+  color: red;
+}
+#maintainInspire {
+  margin-left: 21px;
+}
+#stdOrMove {
+  margin-left: 21px;
+}
+#inspireFail {
+  margin-left: 0;
+}
+#dimAlert {
+  color: red;
+}
+div .freeActions {
+  margin: 0;
+}
+div .freeIndented {
+  margin-top: 0;
+}
+list .needsIndent {
+  padding-left: 16px;
+}
+.inspireAlert {
+  color: red;
+}
+.babAlert {
+  color: red;
+}
+.noMargin {
+  margin: 0;
+}
+body {
+  background: #000;
+  color: #fff;
+  padding: 25px;
+  font-family: sans-serif;
+}
+#form1 {
+  float: left;
+  margin-left: 21px;
+  width: 36%;
+  min-height: 200px;
+}
+#actionEconomy {
+  float: left;
+  width: 15%;
+  padding-left: 10px;
+  min-height: 200px;
+  clear: right;
+}
+#drawOrSheathe {
+  float: left;
+  width: 43%;
+  min-height: 200px;
+}
+.category {
+  font-size: 18px;
+  text-decoration: underline;
+}
+.eitherOr {
+  margin-left: 0;
+}
+#form2 {
+  clear: both;
+  width: 100%;
+}
+h4 {
+  margin: 0;
+}
+input {
+  margin-left: -21px;
+  text-indent: 21px;
+}
+ul {
+  padding: 0px;
+  margin: 0px;
+}
+hr {
+  width: 75%;
+  color: white;
+  background-color: white;
+  text-align: left;
+  margin-left: 0;
+}
+#setDCValue {
+  display: inline-block;
+  position: relative;
+  left: 352px;
+  bottom: 26px;
+}
+#manualEntry {
+  display: inline-block;
+  position: relative;
+  top: -23px;
+  left: 355px;
+}
+#end {
+  float: left;
+  width: 100%;
+  min-height: 200px;
+}
+#manualDCSet {
+  float: left;
+}
+#charLev {
+  padding-left: 21px;
+}
+#levelNumber {
+  font-size: 18px;
+}
+#levelReset {
+  margin-left: 50px;
+}
+#startSpeedReset {
+  margin-left: 50px;
+}
