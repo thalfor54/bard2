@@ -864,7 +864,7 @@ function roundsActions() {
         let nothingEntry1 = nothingRow.insertCell(1)
         nothingEntry1.setAttribute("id","nothingEntry1")
         nothingEntry1.setAttribute("style","text-align: center")
-        nothingEntry1.innerHTML = "0"
+        nothingEntry1.innerHTML = "1"
     }  
     if (document.getElementById("inspireCompetence").checked) {
         inspireTargets()
