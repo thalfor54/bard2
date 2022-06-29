@@ -1,35 +1,35 @@
 function levelDependentOptions() {
     let levelNum = document.getElementById("characterLevel").value
     let levelNumDisplay = document.getElementById("levelNumber")
-    levelNumDisplay.innerHTML = levelNum
+    levelNumDisplay.innerText = levelNum
     if(levelNum < 2) {
         let draw0 = document.getElementById("drawSpeed")
-        draw0.innerHTML = "Move Action"
+        draw0.innerText = "Move Action"
         let sheathe0 = document.getElementById("sheatheSpeed")
-        sheathe0.innerHTML = "Move Action"
+        sheathe0.innerText = "Move Action"
     } else if (levelNum <4) {
         let draw1 = document.getElementById("drawSpeed")
-        draw1.innerHTML = "Free Action"
+        draw1.innerText = "Free Action"
         let draw2 = document.getElementById("draw")
         draw2.hidden = true
         let sheathe1 = document.getElementById("sheatheSpeed")
-        sheathe1.innerHTML = "Move Action"
+        sheathe1.innerText = "Move Action"
     } else if(levelNum > 3 && levelNum < 7) {
         let draw3 = document.getElementById("drawSpeed")
-        draw3.innerHTML = "Free Action"
+        draw3.innerText = "Free Action"
         let draw4 = document.getElementById("draw")
         draw4.hidden = true
         let sheathe2 = document.getElementById("sheatheSpeed")
-        sheathe2.innerHTML = "Swift Action or Move Action"
+        sheathe2.innerText = "Swift Action or Move Action"
         let sheathe3 = document.getElementById("sheatheSwift")
         sheathe3.hidden = false
     } else if(levelNum > 6) {
         let draw5 = document.getElementById("drawSpeed")
-        draw5.innerHTML = "Free Action"
+        draw5.innerText = "Free Action"
         let draw6 = document.getElementById("draw")
         draw6.hidden = true
         let sheathe4 = document.getElementById("sheatheSpeed")
-        sheathe4.innerHTML = "Free Action"
+        sheathe4.innerText = "Free Action"
         let sheathe5 = document.getElementById("sheatheMove")
         sheathe5.hidden = true
         let sheathe6 = document.getElementById("sheatheSwift")
@@ -43,7 +43,7 @@ function levelDependentOptions() {
             highLev1.removeChild(highLev1.firstChild)
         }
         let highLevText = document.createElement("h3")
-        highLevText.innerHTML = "High-Level Options"
+        highLevText.innerText = "High-Level Options"
         highLev1.append(highLevText)
         let p00 = document.createElement("p")
         highLev1.append(p00)
@@ -55,7 +55,7 @@ function levelDependentOptions() {
         highLev1.append(dim)
         let dim2 = document.createElement("label")
         dim2.setAttribute("for","diminuendo")
-        dim2.innerHTML = "Diminuendo (Move Action)"
+        dim2.innerText = "Diminuendo (Move Action)"
         highLev1.append(dim2)
         let dimSpan = document.createElement("span")
         dimSpan.setAttribute("id","dimAlert")
@@ -79,7 +79,7 @@ function levelDependentOptions() {
         highLev2.append(invuln)
         let invuln2 = document.createElement("label")
         invuln2.setAttribute("for","invuln")
-        invuln2.innerHTML = "Inspire Invulnerability (Standard Action)"
+        invuln2.innerText = "Inspire Invulnerability (Standard Action)"
         highLev2.append(invuln2)
         let invulnAlert = document.createElement("span")
         invulnAlert.setAttribute("id","invulnAlert")
@@ -98,7 +98,7 @@ function levelDependentOptions() {
         highLev3.append(musicSpheres)
         let musicSpheres2 = document.createElement("label")
         musicSpheres2.setAttribute("for","musicSpheres")
-        musicSpheres2.innerHTML = "Music of the Spheres (Standard Action)"
+        musicSpheres2.innerText = "Music of the Spheres (Standard Action)"
         highLev3.append(musicSpheres2)
         let spheresAlert = document.createElement("span")
         spheresAlert.setAttribute("id","spheresAlert")
@@ -117,7 +117,7 @@ function levelDependentOptions() {
         highLev4.append(greaterDim)
         let greaterDim2 = document.createElement("label")
         greaterDim2.setAttribute("for","greaterDim")
-        greaterDim2.innerHTML = "Greater Diminuendo (Move Action)"
+        greaterDim2.innerText = "Greater Diminuendo (Move Action)"
         highLev4.append(greaterDim2)
         let gDimAlert = document.createElement("span")
         gDimAlert.setAttribute("id","gDimAlert")
@@ -136,7 +136,7 @@ function levelDependentOptions() {
         highLev5.append(deadlyPerf)
         let deadlyPerf2 = document.createElement("label")
         deadlyPerf2.setAttribute("for","deadlyPerf")
-        deadlyPerf2.innerHTML = "Deadly Performance (Standard Action)"
+        deadlyPerf2.innerText = "Deadly Performance (Standard Action)"
         highLev5.append(deadlyPerf2)
         let deadlyAlert = document.createElement("span")
         deadlyAlert.setAttribute("id","deadlyAlert")
@@ -149,11 +149,11 @@ function levelDependentOptions() {
 
 function levelReset() {
     let levelNumberSpan = document.getElementById("levelNumber")
-    levelNumberSpan.innerHTML = ""
+    levelNumberSpan.innerText = ""
     let drawSpeed1 = document.getElementById("drawSpeed")
-    drawSpeed1.innerHTML = ""
+    drawSpeed1.innerText = ""
     let sheatheSpeed1 = document.getElementById("sheatheSpeed")
-    sheatheSpeed1.innerHTML = ""
+    sheatheSpeed1.innerText = ""
     let drawButton1 = document.getElementById("draw")
     drawButton1.hidden = false
     let sheatheMove1 = document.getElementById("sheatheMove")
@@ -174,13 +174,13 @@ function levelReset() {
     }
     let spanReset = document.getElementsByClassName("redSpan")
     for (let i=0; i < spanReset.length; i++) {
-        spanReset[i].innerHTML = ""
+        spanReset[i].innerText = ""
     }
     let stylesheet00 = document.styleSheets[0]
     for (i=0; i<5; i++) {
         stylesheet00.cssRules[i].style.textDecoration="none"
     }
-    document.getElementById("startValue").innerHTML = ""
+    document.getElementById("startValue").innerText = ""
 
 }
 document.getElementById("levelReset").onclick = levelReset;
@@ -206,7 +206,7 @@ function setStartingDC() {
             }
         }
     } else if (startDC == 5) {
-        document.getElementById("startValue").innerHTML = '5'
+        document.getElementById("startValue").innerText = '5'
         let stylesheet0 = document.styleSheets[0]
         for (i=0; i<5; i++) {
             stylesheet0.cssRules[i].style.textDecoration="none"
@@ -238,7 +238,7 @@ function setStartingDC() {
         stylesheet0.cssRules[2].style.textDecoration="line-through"
         stylesheet0.cssRules[3].style.textDecoration="line-through"
     } else if (startDC == 10) {
-        document.getElementById("startValue").innerHTML = '10'
+        document.getElementById("startValue").innerText = '10'
         let stylesheet1 = document.styleSheets[0]
         for (i=0; i<4; i++) {
             stylesheet1.cssRules[i].style.textDecoration="none"
@@ -265,7 +265,7 @@ function setStartingDC() {
         let standardMove2Off = document.getElementById("secondMove")
         standardMove2Off.disabled = true
     } else if (startDC == 15) {
-        document.getElementById("startValue").innerHTML = '15'
+        document.getElementById("startValue").innerText = '15'
         let stylesheet2 = document.styleSheets[0]
         for (i=0; i<4; i++) {
             stylesheet2.cssRules[i].style.textDecoration="none"
@@ -288,7 +288,7 @@ function setStartingDC() {
         let moveFullOff = document.getElementById("fullRoundAction")
         moveFullOff.disabled = true
     } else if (startDC == 20) {
-        document.getElementById("startValue").innerHTML = '20'
+        document.getElementById("startValue").innerText = '20'
         let stylesheet3 = document.styleSheets[0]
         for (i=0; i<4; i++) {
             stylesheet3.cssRules[i].style.textDecoration="none"
@@ -309,7 +309,7 @@ function setStartingDC() {
         let swiftCheck = document.getElementById("swiftAction")
         swiftCheck.checked = true
     } else if (startDC == 30) {
-        document.getElementById("startValue").innerHTML = '30'
+        document.getElementById("startValue").innerText = '30'
         let stylesheet4 = document.styleSheets[0]
         for (i=0; i<4; i++) {
             stylesheet4.cssRules[i].style.textDecoration="none"
@@ -338,14 +338,14 @@ function startSpeedReset() {
     }
     let spanReset = document.getElementsByClassName("redSpan")
     for (let i=0; i < spanReset.length; i++) {
-        spanReset[i].innerHTML = ""
+        spanReset[i].innerText = ""
     }
     let stylesheet00 = document.styleSheets[0]
     for (i=0; i<5; i++) {
         stylesheet00.cssRules[i].style.textDecoration="none"
     }
     let startDCValueReset = document.getElementById("startValue")
-    startDCValueReset.innerHTML = ""
+    startDCValueReset.innerText = ""
 }
 document.getElementById("startSpeedReset").onclick = startSpeedReset;
 
@@ -369,7 +369,7 @@ function draw() {
             standardFromDraw.disabled = true
             standardHiddenDraw.checked = true
         } else {
-            let drawAlertGet = document.getElementById("drawAlert").innerHTML = "No move actions left!"
+            let drawAlertGet = document.getElementById("drawAlert").innerText = "No move actions left!"
         }
         fullRoundDisableFromDraw.disabled = true
         fullRoundHiddenDraw.checked = true
@@ -394,7 +394,7 @@ function sheatheMove() {
         standardHiddenSheathe.checked = true
     } else {
         let cantSheatheAlert = document.getElementById("sheatheAlert")
-        cantSheatheAlert.innerHTML = "No move actions left!"
+        cantSheatheAlert.innerText = "No move actions left!"
     }
 }
 document.getElementById("sheatheMove").onclick = sheatheMove;
@@ -407,7 +407,7 @@ function sheatheSwift() {
         swiftHiddenSheathe.checked = true
     } else {
         let cantSheatheAlert2 = document.getElementById("sheatheAlert")
-        cantSheatheAlert2.innerHTML = "No swift actions left!"
+        cantSheatheAlert2.innerText = "No swift actions left!"
     }
 }
 document.getElementById("sheatheSwift").onclick = sheatheSwift;
@@ -458,7 +458,7 @@ function inspMove() {
             fullRoundLabel.style.textDecoration="line-through"
         } else {
             let cantInspire0 = document.getElementById("inspireAlert")
-            cantInspire0.innerHTML = "No move actions left"
+            cantInspire0.innerText = "No move actions left"
             inspireBox1.checked = false
         } 
     } else {
@@ -518,7 +518,7 @@ function babSwift() {
             nothingBox2.disabled = true
             nothingLabel.style.textDecoration="line-through"
         } else {
-            cantBAB1.innerHTML = "No swift action left"
+            cantBAB1.innerText = "No swift action left"
             babBox1.checked = false
         }
     } else {
@@ -527,7 +527,7 @@ function babSwift() {
             swiftHidden1.checked = false
             nothingLabel.style.textDecoration="none"
             nothingBox2.disabled = false
-            cantBAB1.innerHTML = ""
+            cantBAB1.innerText = ""
         }
     }
 }
@@ -579,11 +579,11 @@ function attacksFullRound() {
                 spellBox.disabled = true
                 spellLabel.style.textDecoration="line-through"
             } else {
-                cantAttacks.innerHTML = " Not enough action economy"
+                cantAttacks.innerText = " Not enough action economy"
                 attacksBox1.checked = false
             }
         } else {
-            cantAttacks.innerHTML = " Not enough action economy"
+            cantAttacks.innerText = " Not enough action economy"
             attacksBox1.checked = false
         }
     } else {
@@ -605,7 +605,7 @@ function attacksFullRound() {
         inspireLabel.style.textDecoration="none"
         spellBox.disabled = false
         spellLabel.style.textDecoration="none"
-        cantAttacks.innerHTML = ""
+        cantAttacks.innerText = ""
     }
 }
 
@@ -638,7 +638,7 @@ function spellStd() {
                 fullRoundHidden1.checked = true
             }
         } else {
-            cantSpell.innerHTML = "No standard action left"
+            cantSpell.innerText = "No standard action left"
             spellBox.checked = false
         }
     } else {
@@ -652,7 +652,7 @@ function spellStd() {
         secondMoveBox.disabled = false
         secondMoveLabel.style.textDecoration="none"
         secondMoveHidden1.checked = false
-        cantSpell.innerHTML = ""
+        cantSpell.innerText = ""
     }
 }
 
@@ -680,7 +680,7 @@ function dimMove() {
             standardHidden1.checked = true
             fullRoundBox3.disabled = true
         } else {
-            cantDim0.innerHTML = "No move actions left"
+            cantDim0.innerText = "No move actions left"
             dimBox1.checked = false
         } 
     } else {
@@ -689,7 +689,7 @@ function dimMove() {
             secondMoveHidden1.checked = false
             standardBox3.disabled = false
             standardHidden1.checked = false
-            cantDim.innerHTML = ""
+            cantDim.innerText = ""
             if (moveBox3.checked == false) {
                 fullRoundBox3.disabled = false
                 fullRoundHidden1.checked = false
@@ -724,7 +724,7 @@ function invulnStd() {
             fullRoundBox4.disabled = true
             fullRoundHidden1.checked = true
         } else {
-            cantInvuln.innerHTML = "No standard action left"
+            cantInvuln.innerText = "No standard action left"
             invulnBox1.checked = false
             secondMoveBox4.disabled = false
             secondMoveHidden1.checked = false
@@ -741,7 +741,7 @@ function invulnStd() {
             fullRoundBox4.disabled = false
             fullRoundHidden1.checked = false
         }
-        invulnAlert.innerHTML = ""
+        invulnAlert.innerText = ""
     }
 }
 
@@ -764,7 +764,7 @@ function spheresStd() {
             fullRoundBox5.disabled = true 
             fullRoundHidden1.checked = true
         } else {
-            cantSpheres.innerHTML = "No standard action left"
+            cantSpheres.innerText = "No standard action left"
             standardBox5.checked = false
             standardHidden1.checked = false
             secondMoveBox5.disabled = false
@@ -776,7 +776,7 @@ function spheresStd() {
         if (moveBox5.checked == false) {
             fullRoundBox5.disabled = false 
         }
-        spheresAlert.innerHTML = ""
+        spheresAlert.innerText = ""
     }
 }
 
@@ -805,7 +805,7 @@ function gDimMove() {
             fullRoundBox6.disabled = true
             fullRoundHidden1.checked = true
         } else {
-            cantDim6.innerHTML = "No move actions left"
+            cantDim6.innerText = "No move actions left"
             gDimBox6.checked = false
         } 
     } else {
@@ -814,7 +814,7 @@ function gDimMove() {
             secondMoveHidden1.checked = false
             standardBox6.disabled = false
             standardHidden1.checked = false
-            cantDim6.innerHTML = ""
+            cantDim6.innerText = ""
             if (moveBox6.checked == false) {
                 fullRoundBox6.disabled = false
                 fullRoundHidden1.checked = false
@@ -841,7 +841,7 @@ function deadlyStd() {
             secondMoveBox7.disabled = true
             secondMoveHidden1.checked = true
         } else if (standardBox7.checked == true) {
-            cantDeadly.innerHTML = "No standard action left"
+            cantDeadly.innerText = "No standard action left"
             deadlyBox1.checked = false
             secondMoveBox7.disabled = false
             secondMoveHidden1.checked = false
@@ -849,7 +849,7 @@ function deadlyStd() {
     } else {
         standardBox7.checked = false
         standardHidden1.checked = false
-        cantDeadly.innerHTML = ""
+        cantDeadly.innerText = ""
     }
 }
 
@@ -860,11 +860,11 @@ function roundsActions() {
         nothingRow.setAttribute("id","nothingRow")
         let nothingEntry0 = nothingRow.insertCell(0)
         nothingEntry0.setAttribute("id","nothingEntry0")
-        nothingEntry0.innerHTML="Nothing Else"
+        nothingEntry0.innerText="Nothing Else"
         let nothingEntry1 = nothingRow.insertCell(1)
         nothingEntry1.setAttribute("id","nothingEntry1")
         nothingEntry1.setAttribute("style","text-align: center")
-        nothingEntry1.innerHTML = "1"
+        nothingEntry1.innerText = "1"
     }  
     if (document.getElementById("inspireCompetence").checked) {
         inspireTargets()
@@ -962,17 +962,17 @@ function roundReset() {
         fullRoundLabel.style.textDecoration="none"
     }
     let drawSpeedReset = document.getElementById("drawSpeed")
-    drawSpeedReset.innerHTML = ''
+    drawSpeedReset.innerText = ''
     let drawAlertReset = document.getElementById("drawAlert")
-    drawAlertReset.innerHTML = ''
+    drawAlertReset.innerText = ''
     let sheatheSpeedReset = document.getElementById("sheatheSpeed")
-    sheatheSpeedReset.innerHTML = ''
+    sheatheSpeedReset.innerText = ''
     let sheatheAlertReset = document.getElementById("sheatheAlert")
-    sheatheAlertReset.innerHTML = ''
+    sheatheAlertReset.innerText = ''
     let babAlertReset = document.getElementById("babAlert")
-    babAlertReset.innerHTML = ''
+    babAlertReset.innerText = ''
     let attacksAlertReset = document.getElementById("attacksAlert")
-    attacksAlertReset.innerHTML = ''
+    attacksAlertReset.innerText = ''
     let inspireLabel = document.getElementById("inspireLabel")
     let spellLabel = document.getElementById("spellLabel")
     let maintainLabel = document.getElementById("maintainLabel")
@@ -995,13 +995,13 @@ function inspireTargets() {
     for (let i=1; i<11; i++) {
         let option = document.createElement("option")
         option.setAttribute("value",i)
-        option.innerHTML = i
+        option.innerText = i
         menu.append(option)
     } 
     div1.append(menu)
     let p = document.createElement("p")
     let btn = document.createElement("button")
-    btn.innerHTML = "Get DC"
+    btn.innerText = "Get DC"
     btn.setAttribute("id","btn")
     btn.setAttribute("type","button")
     btn.setAttribute("onclick","inspireDC()")
@@ -1050,7 +1050,7 @@ function inspireDC() {
     inspireEntry1.setAttribute("id","inspireEntry1")
     inspireEntry1.setAttribute("style","text-align: center")
     v = m.value
-    inspireEntry1.innerHTML = v
+    inspireEntry1.innerText = v
 }
 
 function maintainInspire() {
@@ -1067,13 +1067,13 @@ function maintainInspire() {
     for (let i=1; i<11; i++) {
         let option = document.createElement("option")
         option.setAttribute("value",i)
-        option.innerHTML = i
+        option.innerText = i
         menu.append(option)
     } 
     div1.append(menu)
     let p = document.createElement("p")
     let btn = document.createElement("button")
-    btn.innerHTML = "Get DC"
+    btn.innerText = "Get DC"
     btn.setAttribute("id","btn")
     btn.setAttribute("type","button")
     btn.setAttribute("onclick","maintainInspireDC()")
@@ -1115,7 +1115,7 @@ function maintainInspireDC() {
     let m = document.getElementById("menu")
     let v = m.value
     let vInt = (v * 1)
-    inspireEntry1.innerHTML = vInt
+    inspireEntry1.innerText = vInt
 }    
 
 function inspireYesNo() {
@@ -1123,7 +1123,7 @@ function inspireYesNo() {
     if (boxChecked.checked = true) {
         let noChange = document.getElementById("inspireEntry1")
         let z = 0
-        noChange.innerHTML = z
+        noChange.innerText = z
     }
 }
 
@@ -1145,12 +1145,12 @@ function increaseBAB() {
     for (let i=0; i<6; i++) {
         let option1 = document.createElement("option")
         option1.setAttribute("value",i)
-        option1.innerHTML = i
+        option1.innerText = i
         menu2.append(option1)
     } 
     div3.append(menu2)
     let btn2 = document.createElement("button")
-    btn2.innerHTML = "Submit"
+    btn2.innerText = "Submit"
     btn2.setAttribute("id","btn2")
     btn2.setAttribute("type","button")
     btn2.setAttribute("onclick","babDC()")
@@ -1175,14 +1175,14 @@ function babDC() {
     babRow.setAttribute("id","babRow")
     let babEntry0 = babRow.insertCell(0)
     babEntry0.setAttribute("id","babEntry0")
-    babEntry0.innerHTML = "Increase BAB"
+    babEntry0.innerText = "Increase BAB"
     let babEntry1 = babRow.insertCell(1)
     babEntry1.setAttribute("id","babEntry1")
     babEntry1.setAttribute("style","text-align: center")
     let m2 = document.getElementById("menu2")
     let v2 = m2.value
     v2 = (v2 * 2)
-    babEntry1.innerHTML = v2
+    babEntry1.innerText = v2
 }
 
 function extraAttacks() {
@@ -1204,12 +1204,12 @@ function extraAttacks() {
     for (let i=0; i<4; i++) {
         let option1 = document.createElement("option")
         option1.setAttribute("value",i)
-        option1.innerHTML = i
+        option1.innerText = i
         menu3.append(option1)
     } 
     div4.append(menu3)
     let btn3 = document.createElement("button")
-    btn3.innerHTML = "Submit"
+    btn3.innerText = "Submit"
     btn3.setAttribute("id","btn3")
     btn3.setAttribute("type","button")
     btn3.setAttribute("onclick","attacksDC()")
@@ -1241,7 +1241,7 @@ function attacksDC() {
     let m3 = document.getElementById("menu3")
     let v3 = m3.value
     v3 = (v3 * 3)
-    document.getElementById("attacksEntry1").innerHTML = v3
+    document.getElementById("attacksEntry1").innerText = v3
 }
 
 function increaseAC() {
@@ -1261,12 +1261,12 @@ function increaseAC() {
     for (let i=0; i<11; i++) {
         let option1 = document.createElement("option")
         option1.setAttribute("value",i)
-        option1.innerHTML = i
+        option1.innerText = i
         menu4.append(option1)
     } 
     div5.append(menu4)
     let btn4 = document.createElement("button")
-    btn4.innerHTML = "Submit"
+    btn4.innerText = "Submit"
     btn4.setAttribute("id","btn4")
     btn4.setAttribute("type","button")
     btn4.setAttribute("onclick","acDC()")
@@ -1297,7 +1297,7 @@ function acDC() {
     acEntry1.setAttribute("style","text-align: center")
     let m4 = document.getElementById("menu4")
     let v4 = m4.value
-    document.getElementById("acEntry1").innerHTML = v4
+    document.getElementById("acEntry1").innerText = v4
 }
 
 function castSpell() {
@@ -1316,12 +1316,12 @@ function castSpell() {
     for (let i=1; i<7; i++) {
         let option1 = document.createElement("option")
         option1.setAttribute("value",i)
-        option1.innerHTML = i
+        option1.innerText = i
         menu5.append(option1)
     } 
     div6.append(menu5)
     let btn5 = document.createElement("button")
-    btn5.innerHTML = "Submit"
+    btn5.innerText = "Submit"
     btn5.setAttribute("id","btn5")
     btn5.setAttribute("type","button")
     btn5.setAttribute("onclick","spellDC()")
@@ -1354,7 +1354,7 @@ function spellDC() {
     let v5 = m5.value
     v5 = (v5 * 8)
     let spellSpan = document.getElementById("sp1")
-    spellSpan.innerHTML = v5
+    spellSpan.innerText = v5
     let spellRow = tableGet5.insertRow()
     spellRow.setAttribute("id","spellRow")
     let spellEntry0 = spellRow.insertCell(0)
@@ -1366,7 +1366,7 @@ function spellDC() {
     let m5a = document.getElementById("menu5")
     let v5a = m5a.value
     v5a = (v5a * 2)
-    document.getElementById("spellEntry1").innerHTML = v5a
+    document.getElementById("spellEntry1").innerText = v5a
     let br9 = document.createElement("br")
     br9.setAttribute("id","br9")
     let spellDiv6 = document.getElementById("instCheckResult")
@@ -1381,13 +1381,13 @@ function spellDC() {
     let optionArray = ["Fail", "Succeed by less than 6", "Succeed by 6-11", "Succeed by 12-17", "Succeed by 18-23", "Succeed by 24-29", "Succeed by 30-35", "Succeed by 36-41", "Succeed by 42-47", "Succeed by 48-53", "Succeed by 54-59", "Succeed by 60+"]
     for (i=0; i<optionArray.length; i++) {
         let option1 = document.createElement("option")
-        option1.innerHTML = optionArray[i]
+        option1.innerText = optionArray[i]
         option1.setAttribute("value",i)
         menu6.append(option1)     
     } 
     spellDiv6.append(menu6)
     let btn6 = document.createElement("button")
-    btn6.innerHTML = "Submit"
+    btn6.innerText = "Submit"
     btn6.setAttribute("id","btn6")
     btn6.setAttribute("type","button")
     btn6.setAttribute("onclick","instrumentCheckEffect()")
@@ -1474,7 +1474,7 @@ function diminuendo() {
     dimEntry1.setAttribute("id","dimEntry1") 
     dimEntry1.setAttribute("style","text-align: center")
     let dimVal = -6
-    document.getElementById("dimEntry1").innerHTML = dimVal
+    document.getElementById("dimEntry1").innerText = dimVal
 }
 
 function invuln() {
@@ -1488,7 +1488,7 @@ function invuln() {
     invulnEntry1.setAttribute("id","invulnEntry1") 
     invulnEntry1.setAttribute("style","text-align: center")
     let invulnVal = 10
-    document.getElementById("invulnEntry1").innerHTML = invulnVal
+    document.getElementById("invulnEntry1").innerText = invulnVal
 }
 
 function musicSpheres() {
@@ -1502,7 +1502,7 @@ function musicSpheres() {
     musicSpheresEntry1.setAttribute("id","musicSpheresEntry1") 
     musicSpheresEntry1.setAttribute("style","text-align: center")
     let musicSpheresVal = 15
-    document.getElementById("musicSpheresEntry1").innerHTML = musicSpheresVal
+    document.getElementById("musicSpheresEntry1").innerText = musicSpheresVal
 }
 
 function greaterDim() {
@@ -1516,7 +1516,7 @@ function greaterDim() {
     greaterDimEntry1.setAttribute("id","greaterDimEntry1") 
     greaterDimEntry1.setAttribute("style","text-align: center")
     let greaterDimVal = -12
-    document.getElementById("greaterDimEntry1").innerHTML = greaterDimVal
+    document.getElementById("greaterDimEntry1").innerText = greaterDimVal
 }
 
 function deadlyPerf() {
@@ -1530,20 +1530,20 @@ function deadlyPerf() {
     deadlyPerfEntry1.setAttribute("id","deadlyPerfEntry1") 
     deadlyPerfEntry1.setAttribute("style","text-align: center")
     let deadlyPerfVal = 25
-    document.getElementById("deadlyPerfEntry1").innerHTML = deadlyPerfVal
+    document.getElementById("deadlyPerfEntry1").innerText = deadlyPerfVal
 }
 
 function manualSet() {
     let prompt = window.prompt("Set starting DC for round","")
     let newStartValue = document.getElementById("startValue")
-    newStartValue.innerHTML = prompt    
+    newStartValue.innerText = prompt    
     
 }
 
 function endRoundDC() {
     let tableGet6 = document.getElementById("table"), sumVal = 0
     for(i = 1; i < table.rows.length; i++) {
-      sumVal = sumVal + parseInt(table.rows[i].cells[1].innerHTML);
+      sumVal = sumVal + parseInt(table.rows[i].cells[1].innerText);
     }
     let tableGet7 = document.getElementById("table")
     let endRoundRow = tableGet7.insertRow()
@@ -1554,20 +1554,20 @@ function endRoundDC() {
     let endRoundEntry1 = endRoundRow.insertCell(1)
     endRoundEntry1.setAttribute("id","endRoundValue")
     endRoundEntry1.setAttribute("style","text-align: center")
-    document.getElementById("endRoundValue").innerHTML = sumVal
+    document.getElementById("endRoundValue").innerText = sumVal
 }
 function startNextRound() {
     let formZeroHide = document.getElementById("form0")
     formZeroHide.style.display = "none"
     let roundTitle = document.getElementById("round1")
-    roundTitle.innerHTML = "Next round!"
+    roundTitle.innerText = "Next round!"
     let promptChange = document.getElementById("startPrompt")
-    promptChange.innerHTML = ''
-    promptChange.innerHTML = 'Previous Round Value'
+    promptChange.innerText = ''
+    promptChange.innerText = 'Previous Round Value'
     let valueChange = document.getElementById("startValue")
-    let previousValue = document.getElementById("endRoundValue").innerHTML
-    valueChange.innerHTML = ''
-    valueChange.innerHTML = previousValue
+    let previousValue = document.getElementById("endRoundValue").innerText
+    valueChange.innerText = ''
+    valueChange.innerText = previousValue
     let loseLastRow = document.getElementById("endRoundRow")
     loseLastRow.parentNode.removeChild(loseLastRow)
     let form1Get = document.getElementById("form1")
@@ -1578,7 +1578,7 @@ function startNextRound() {
     }
     let form1Spans = form1Get.getElementsByTagName("span")
     for (let j = 0; j <form1Spans.length; j++) {
-        form1Spans[j].innerHTML = ""
+        form1Spans[j].innerText = ""
     }
     let actionEconGet = document.getElementById("actionEconomy")
     let actionEconInputs = actionEconGet.getElementsByTagName("input")
@@ -1588,12 +1588,12 @@ function startNextRound() {
     }
     let actionEconSpans = actionEconGet.getElementsByTagName("span")
     for (let l = 0; l < actionEconSpans.length; l++) {
-        actionEconSpans[l].innerHTML = ""
+        actionEconSpans[l].innerText = ""
     }
     let drawSheatheGet = document.getElementById("drawOrSheathe")
     let drawSheatheSpans = drawSheatheGet.getElementsByTagName("span")
     for (let m = 0; m < drawSheatheSpans.length; m++) {
-        drawSheatheSpans[m].innerHTML = ""
+        drawSheatheSpans[m].innerText = ""
     }
     let inspireRowRemove = document.getElementById("inspireRow")
     if (typeof(inspireRowRemove) != "undefined" && inspireRowRemove != null) {
